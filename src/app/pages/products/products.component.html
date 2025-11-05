@@ -1,0 +1,46 @@
+<div class="products-container">
+  <div class="header">
+    <h1>Products</h1>
+    <p class="subtitle">Server-side rendered product list with API data fetching</p>
+  </div>
+
+  @if (loading) {
+    <div class="loading-state">
+      <p>Loading products...</p>
+    </div>
+  } @else if (error) {
+    <div class="error-state">
+      <p>{{ error }}</p>
+    </div>
+  } @else {
+    <div class="products-grid">
+      @for (product of products$ | async; track product.id) {
+        <div class="product-card">
+          <div class="product-header">
+            <h3>{{ product.name }}</h3>
+            <span class="category-badge">{{ product.category }}</span>
+          </div>
+          <p class="product-description">{{ product.description }}</p>
+          <div class="product-footer">
+            <span class="price">${{ product.price.toFixed(2) }}</span>
+            <span class="ssr-badge">✓ SSR</span>
+          </div>
+        </div>
+      } @empty {
+        <div class="empty-state">
+          <p>No products available</p>
+        </div>
+      }
+    </div>
+  }
+
+  <div class="info-box">
+    <h3>SSR Pattern Demonstrated:</h3>
+    <ul>
+      <li>Data fetched on server using DataService</li>
+      <li>TransferState prevents duplicate API calls on client</li>
+      <li>Content is fully rendered before HTML is sent to browser</li>
+      <li>Check page source to see rendered product HTML</li>
+    </ul>
+  </div>
+</div>

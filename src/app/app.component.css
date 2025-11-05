@@ -1,0 +1,19 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  min-height: 100vh;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 200px;
+  }
+}
+

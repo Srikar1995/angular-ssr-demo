@@ -1,0 +1,139 @@
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+.form-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #60a5fa;
+}
+
+.form-control.error {
+  border-color: #ef4444;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.submit-button {
+  padding: 0.875rem 2rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.submit-button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.success-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-message h2 {
+  color: #059669;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+.reset-button {
+  padding: 0.75rem 1.5rem;
+  background: #64748b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-button:hover {
+  background: #475569;
+}
+
+.info-box {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.info-box ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  color: #475569;
+  line-height: 1.8;
+}
+

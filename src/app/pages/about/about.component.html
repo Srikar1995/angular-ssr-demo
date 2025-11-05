@@ -1,0 +1,43 @@
+<div class="about-container">
+  <div class="header">
+    <h1>About</h1>
+    <p class="subtitle">SSR with conditional rendering and platform detection</p>
+  </div>
+
+  @if (aboutInfo$ | async; as aboutInfo) {
+    <div class="content-section">
+      <h2>{{ aboutInfo.title }}</h2>
+      <div class="content-text">
+        {{ aboutInfo.content }}
+      </div>
+      <p class="last-updated">Last updated: {{ aboutInfo.lastUpdated | date:'medium' }}</p>
+    </div>
+  }
+
+  <div class="platform-info">
+    <h3>Platform Detection Example</h3>
+    <p><strong>Current Platform:</strong> {{ isBrowser ? 'Browser (Client)' : 'Server' }}</p>
+    <p><strong>Browser Info:</strong> {{ getBrowserInfo() }}</p>
+    
+    @if (isBrowser) {
+      <div class="browser-only-feature">
+        <p><strong>Page Views (stored in localStorage):</strong> {{ viewCount }}</p>
+        <small>This counter only works in the browser, not on the server</small>
+      </div>
+    } @else {
+      <div class="server-note">
+        <p>Server-side rendering: Browser-only features are not available</p>
+      </div>
+    }
+  </div>
+
+  <div class="info-box">
+    <h3>SSR Patterns Demonstrated:</h3>
+    <ul>
+      <li>Platform detection using PLATFORM_ID injection</li>
+      <li>Conditional rendering based on browser vs server</li>
+      <li>Safe access to browser-only APIs (localStorage, window, etc.)</li>
+      <li>Server-side fallback content for browser-only features</li>
+    </ul>
+  </div>
+</div>
