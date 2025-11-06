@@ -73,6 +73,8 @@ npm run serve:ssr:angular-ssr-demo:no-ssr
 npm run serve:ssr:angular-ssr-demo:no-ssr:4001
 ```
 
+**Note:** Uses `cross-env` for cross-platform compatibility (Windows, Mac, Linux).
+
 - Server starts on: **http://localhost:4000** (or 4001)
 - Console will show: `⚠️ SSR is DISABLED - Running in client-side rendering mode`
 
@@ -343,6 +345,25 @@ PORT=3000 npm run serve:ssr:angular-ssr-demo
 ```
 
 ## 📝 Common Issues and Solutions
+
+### Issue: "DISABLE_SSR is not recognized" (Windows)
+
+**Error:** `'DISABLE_SSR' is not recognized as an internal or external command`
+
+**Solution:**
+This project uses `cross-env` package for cross-platform environment variables. If you see this error:
+1. Make sure you've run `npm install` to install dependencies
+2. The `cross-env` package should be in `devDependencies`
+3. If the error persists, try: `npm install cross-env --save-dev`
+
+**Windows Alternative (if cross-env doesn't work):**
+```bash
+# In PowerShell:
+$env:DISABLE_SSR="true"; node dist/angular-ssr-demo/server/server.mjs
+
+# In Command Prompt (cmd):
+set DISABLE_SSR=true && node dist/angular-ssr-demo/server/server.mjs
+```
 
 ### Issue: Port Already in Use
 
